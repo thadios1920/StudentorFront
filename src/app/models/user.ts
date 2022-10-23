@@ -17,6 +17,6 @@ export class User {
          solde?: Solde,
          Profession?: string,
          servicesdem?: Servicesdem[] | any ,
-         servicesoff?: Servicesoff[] 
+         servicesoff?: Servicesoff[] |any
     ){}
 }

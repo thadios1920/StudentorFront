@@ -1,4 +1,6 @@
+import { CrudService } from './../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
+import { Servicesdem } from 'src/app/models/servicesdem';
 
 @Component({
   selector: 'app-service-demande',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceDemandeComponent implements OnInit {
 
-  constructor() { }
+  constructor( private crud:CrudService ) { }
 
+  listService : Servicesdem[]=[]
   ngOnInit(): void {
+    this.crud.getAllServicesDem()
+    .subscribe( data => {this.listService = data;
+    });
   }
 
 }

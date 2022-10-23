@@ -15,17 +15,18 @@ export class HomeComponent implements OnInit {
   constructor( private crud:CrudService ) { }
 
   listUser : User[]=[]   
-  listService : Servicesdem[]=[]
+  listService : Servicesoff[]=[]
 
   ngOnInit(): void {
     this.crud.getAllUsers()
     .subscribe( data => {this.listUser = data;
     });
+
+    this.crud.getAllServicesOff()
+    .subscribe( data => {this.listService = data;
+    });
     
-    for (let index = 0; index < this.listUser.length; index++) {
-      this.listService[index]=this.listUser[index].servicesdem
-    }
-    console.log(this.listService);
+    
     
   }
 

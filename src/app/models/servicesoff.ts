@@ -1,10 +1,16 @@
 export class Servicesoff {
+     description?: string | any
+     titre?: string | any
+     prix?: number | any
+     domaine?: string | any
+     commentaires?: string | any
+     tempsService?: string | any
     constructor(
-        public description?: string ,
-        public titre?: string ,
-        public prix?: number,
-        public domaine?: string ,
-        public commentaires?: string ,
-        public tempsService?: string
+         description?: string | any ,
+         titre?: string | any,
+         prix?: number | any,
+         domaine?: string | any,
+         commentaires?: string | any,
+         tempsService?: string | any
     ){}
 }
