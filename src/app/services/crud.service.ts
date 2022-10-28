@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { Servicesdem } from '../models/servicesdem';
 
 const URL=environment.apiUrl;
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -27,4 +27,8 @@ export class CrudService {
   public getAllServicesDem():Observable <Servicesdem[]  > {
     return this.http.get<Servicesdem[]>(URL+'/servicesdem')
   }
+
+  addServiceDem(service:Servicesoff):Observable<Servicesoff>{
+    return this.http.post<Servicesoff>(URL+'/addServiceOff', service);
+    }
 }

@@ -1,3 +1,4 @@
+import { PostServiceOffComponent } from './online/post-service-off/post-service-off.component';
 import { ServiceDemandeComponent } from './online/service-demande/service-demande.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,6 +8,7 @@ const routes: Routes = [
   {path:'servicesOff',component:HomeComponent},
   {path:'', redirectTo:'servicesOff', pathMatch:'full'},
   {path:'servicesDem',component:ServiceDemandeComponent},
+  {path:'PostservicesOff',component:PostServiceOffComponent},
 ];
 
 @NgModule({
