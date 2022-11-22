@@ -6,16 +6,24 @@ export class User {
     nom?: string
     prenom?: string
     gender?: string
-    solde?: Solde
-    Profession?: string
+    soldeAux?: Number
+    passwordHash?:string
+    profession?:string
+    ville?:string
+    image?: string;
+    //competance?:[]
     servicesdem?: Servicesdem[] |any
     servicesoff?: Servicesoff[] |any
     constructor(
          nom?: string, 
          prenom?: string,
          gender?: string,
-         solde?: Solde,
-         Profession?: string,
+         soldeAux?: Number,
+         passwordHash?:string,
+         ville?:string,
+         image?:string,
+        // competance?:[],
+         profession?: string,
          servicesdem?: Servicesdem[] | any ,
          servicesoff?: Servicesoff[] |any
     ){}
