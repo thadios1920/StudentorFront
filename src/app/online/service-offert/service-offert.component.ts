@@ -14,8 +14,18 @@ import { CrudService } from '../../services/crud.service';
 export class ServiceOffertComponent implements OnInit {
 
   constructor( private crud:CrudService ) { }
+  orderHead: any;
+isDescOrder: any;
   listService : Servicesoff[]=[]
+  searshInput={
+    titre:''
+  };
 
+  sort(head: any)
+  {this.isDescOrder=!this.isDescOrder;
+    this.orderHead=head;
+    
+  }
   ngOnInit(): void {
 
     this.crud.getAllServicesOff()

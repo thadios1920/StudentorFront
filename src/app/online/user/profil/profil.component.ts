@@ -22,9 +22,22 @@ export class ProfilComponent implements OnInit,OnDestroy {
   listServiceDem : Servicesdem[]=[]
   listServiceOffert : Servicesoff[]=[]
 
-  deleteService(id:string)
+
+  imageURL: string =  this.tokenStorage.getUser().image
+name : string = this.tokenStorage.getUser().nom
+    lastname : string = this.tokenStorage.getUser().prenom
+
+  deleteServiceOffert(id:string)
 {
-  this.crud.deleteService(id)
+  this.crud.deleteServiceOffert(id).subscribe()
+  window.location.reload();
+
+}
+deleteServiceDemande(id:string)
+{
+  this.crud.deleteServiceDemande(id).subscribe();
+  window.location.reload();
+
 }
 
 onEdit(){
@@ -40,7 +53,6 @@ if((<HTMLInputElement>document.getElementById("hidden1")).checked==false)
 {
   this.hideDem=true 
   this.hideOff=false
-
 }
 else 
 {
@@ -72,8 +84,4 @@ else
 
   }
 
-}
-
-function hidden() {
-  throw new Error('Function not implemented.');
 }

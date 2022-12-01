@@ -1,13 +1,18 @@
 <main id="main">
-        
+
     <!-- ======= Courses Section ======= -->
     <section id="courses" class="courses">
       <div class="container">
 
         <div class="container px-4 px-lg-5 mt-5">
-
+      
+          <div class="form-group col-md-3 ">
+            <input class="form-control mr-sm-2  "  [(ngModel)]="searshInput.titre" style="border-radius: 1rem;" class="nav-link" type="text" id="search" name="search" placeholder="Search" />
+          </div>
+          <th (click)="sort('titre')"  >titre  <i class="fa fa-solid fa-sort"></i></th>
+          <th (click)="sort('prix')" class="text-center" >prix<i class="fa fa-solid fa-sort"></i></th>
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="course-item" *ngFor="let l of listService; index as i">
+            <div class="course-item" *ngFor="let l of listService| filterBy:searshInput|orderBy:orderHead: isDescOrder ; index as i">
               <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">

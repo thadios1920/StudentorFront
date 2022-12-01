@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { OrderModule } from 'ngx-order-pipe';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './online/home/home.component';
@@ -9,7 +10,7 @@ import { FooterComponent } from './online/footer/footer.component';
 import { ServiceDemandeComponent } from './online/service-demande/service-demande.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PostServiceOffComponent } from './online/user/post-service-off/post-service-off.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ProfilComponent } from './online/user/profil/profil.component';
 import { EditServiceOffComponent } from './online/user/edit-service-off/edit-service-off.component';
 import { PostServiceDemComponent } from './online/user/post-service-dem/post-service-dem.component';
@@ -23,6 +24,8 @@ import { SignUpComponent } from './online/sign-up/sign-up.component';
 import { PricingComponent } from './online/pricing/pricing.component';
 import { AboutComponent } from './online/about/about.component';
 import { TokenInterceptor, TokenInterceptorProvider } from './_helpers/token.interceptor';
+import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
+
 
 
 @NgModule({
@@ -45,10 +48,14 @@ import { TokenInterceptor, TokenInterceptorProvider } from './_helpers/token.int
     SignUpComponent,
     PricingComponent,
     AboutComponent,
+    DashboardAdminComponent
     
   ],
   imports: [
+    FormsModule,
+    FilterPipeModule,
     BrowserModule,
+    OrderModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule

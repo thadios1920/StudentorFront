@@ -15,6 +15,8 @@ import { AboutComponent } from './online/about/about.component';
 import { PricingComponent } from './online/pricing/pricing.component';
 import { EditProfilComponent } from './online/user/edit-profil/edit-profil.component';
 import { EditServiceDemComponent } from './online/user/edit-service-dem/edit-service-dem.component';
+import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
+
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -31,6 +33,7 @@ const routes: Routes = [
   {path:'pricing',component:PricingComponent},
   {path:'dashborad/profil',component:ProfilComponent},
   {path:'dashborad/edit-profil/:id',component:EditProfilComponent},
+  {path:'dashborad/admin',component:DashboardAdminComponent},
 
 
   {path:'messagerie',component:MessagerieComponent},

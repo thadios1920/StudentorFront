@@ -1,16 +1,24 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-        <h1 class="logo me-auto" style="text-decoration: none; color: #2399FF;"><div routerLink='home'>Studentors</div></h1>
+        <h1 class="logo me-auto" style="text-decoration: none; color: #2399FF;"><a routerLink='home'>Studentors</a></h1>
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 <!-- <li><a class="nav-link" aria-current="page" routerLink=''>Accueil <span class="sr-only">(current)</span></a></li> -->
                 <li><a class="nav-link" routerLink='/servicesOff'>Trouver de l'aide</a></li>
                 <li><a class="nav-link" routerLink='servicesDem'>Donner de l'aide</a></li>                <li><a class="nav-link" routerLink='/pricing' id="tarifs">Tarifs</a></li>
-                <li><a class="nav-link" routerLink="dashborad/profil" >compte</a></li>
+                <li>
+                    <li class="dropdown"> <a class="nav-link" routerLink="dashborad/profil" >compte <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a class="nav-link" class="dropdown" routerLink='dashborad/profil'>Gestion Compte</a></li>
+                            <li><a class="nav-link" class="dropdown" routerLink='/postservicesOff'>Poster Service Offert</a></li>
+                            <li><a class="nav-link" class="dropdown" routerLink='/postservicesDem'>Poster Service Demandé</a></li>
+                        </ul>
+                    </li>
+                  
 
-                <li class="dropdown"><div class="nav-link" class="dropdown" routerLink='/about' id="about"><span>A porpos</span> <i class="bi bi-chevron-down"></i></div>
+                <li class="dropdown"><a class="nav-link" class="dropdown" routerLink='/about' id="about"><span>A porpos</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a class="nav-link" class="dropdown" routerLink='/about'>Notre Mission</a></li>
                         <li><a class="nav-link" class="dropdown" routerLink='/about'>Guide Studentors</a></li>
@@ -18,12 +26,13 @@
                     </ul>
                 </li>
             </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-            <input class="form-control mr-sm-2" class="nav-link" type="text" id="search" name="search" placeholder="Search" />
+           
 
         </nav> 
-        <a class="btn-get-started" routerLink='/logIn' class="get-started-btn">Log In</a>
-        <a class="btn-get-started" routerLink='/signUp' class="get-started-btn">Sign Up</a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+        <a routerLink='/logIn' [hidden]="isLoged" class="get-started-btn">Se connecter</a>
+        <a routerLink='/signUp' [hidden]="isLoged" class="get-started-btn">Créer un compte</a>
+        <a (click)="onLogOut()" [hidden]="!isLoged" class="get-started-btn">Deconnexion</a>
     </div>
 </header>
 

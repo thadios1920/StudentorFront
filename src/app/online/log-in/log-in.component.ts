@@ -39,7 +39,11 @@ export class LogInComponent implements OnInit {
         // this.isLoginFailed = false;
         // this.isLoggedIn = true;
         // this.roles = this.tokenStorage.getUser().roles;
-        this.router.navigate(["dashborad/profil"]) 
+        if (this.tokenStorage.getUser().isAdmin) {
+          alert('Bonjour admin:'+this.tokenStorage.getUser().prenom)
+          this.router.navigate(["dashborad/admin"]) 
+        }else {this.router.navigate(["dashborad/profil"]) }
+        
       },
       err => {
         console.log(err);

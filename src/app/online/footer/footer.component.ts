@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private tokenStorage:TokenStorageService
+  ) { }
+
+  adminFooter:Boolean = false
 
   ngOnInit(): void {
+    if (this.tokenStorage.getUser().isAdmin) {
+      this.adminFooter = true
+    }
   }
 
 }

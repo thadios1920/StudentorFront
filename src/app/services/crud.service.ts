@@ -36,6 +36,13 @@ export class CrudService {
   public getAllUsers():Observable <User[]  > {
     return this.http.get<User[]>(URL+'/utilisateur',requestOptions)
   }
+
+
+  //Delete User  
+deleteUserfromRoot(id:string | undefined ):Observable<User>{
+  return this.http.delete<User>(URL+'/utilisateur/'+id,requestOptions);
+  }
+
 //Get All Service Offert
   public getAllServicesOff():Observable <Servicesoff[]  > {
     return this.http.get<Servicesoff[]>(URL+'/serviceOff',requestOptions)
@@ -45,18 +52,22 @@ export class CrudService {
     return this.http.get<Servicesdem[]>(URL+'/serviceDem',requestOptions)
   }
 //Ajouter Service Demandé
-  addServiceDem(service:Servicesoff):Observable<Servicesoff>{
-    return this.http.post<Servicesoff>(URL+'/addServiceDem', service,requestOptions);
+  addServiceDem(service:Servicesoff):Observable<Servicesdem>{
+    return this.http.post<Servicesdem>(URL+'/serviceDem/addServiceDem', service,requestOptions);
     }
 
 //Ajouter Service Offert
     addServiceOffert(service:Servicesoff):Observable<Servicesoff>{
-      return this.http.post<Servicesoff>(URL+'/addServiceOff', service,requestOptions);
+      return this.http.post<Servicesoff>(URL+'/serviceOff/addServiceOff', service,requestOptions);
       }
 
 //supprimer Service
-    deleteService(id:string):Observable<Servicesoff>{
-      return this.http.delete<Servicesoff>(URL+'/deleteServiceOff/'+id,requestOptions);
+    deleteServiceOffert(id:string):Observable<Servicesoff>{
+      return this.http.delete<Servicesoff>(URL+'/serviceOff/'+id,requestOptions);
+      }
+      //supprimer Service
+    deleteServiceDemande(id:string):Observable<Servicesdem>{
+      return this.http.delete<Servicesdem>(URL+'/serviceDem/'+id,requestOptions);
       }
  //Modier Profile
  EditProfile(user:User):Observable<User>{
@@ -68,6 +79,9 @@ export class CrudService {
 //Authentification
 login(credentials: Credential): Observable<any>{
   return this.http.post(URL + "/utilisateur/login", credentials)
+}
+signUp(user: User): Observable<any>{
+  return this.http.post(URL + "/utilisateur/register", user)
 }
 
   

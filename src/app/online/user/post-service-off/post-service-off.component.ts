@@ -2,6 +2,7 @@ import { CrudService } from '../../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class PostServiceOffComponent implements OnInit {
 
-  constructor( private crud:CrudService ,private formBuilder:FormBuilder ) { }
+  constructor( private crud:CrudService ,private formBuilder:FormBuilder,private router: Router ) { }
 
 
   serviceoffForm=new FormGroup(
@@ -25,7 +26,9 @@ export class PostServiceOffComponent implements OnInit {
   
   onAjouter(){
     this.crud.addServiceOffert(this.serviceoffForm.value)
-    .subscribe(data => console.log(data));
+    .subscribe();
+    this.router.navigate(["servicesOff"])
+
     }
 
   ngOnInit(): void {
