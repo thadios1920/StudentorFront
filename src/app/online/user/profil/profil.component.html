@@ -29,7 +29,7 @@
 
 								<div>
 									
-									<a class="btn btn-primary btn-sm" [routerLink]="['../edit-profil/', '637921ddabeaf0ae2b177b11']"><span data-feather="message-square"></span> Modifier Profile</a>
+									<a class="btn btn-primary btn-sm" (click)="onEdit()"><span data-feather="message-square"></span> Modifier Profile</a>
 								</div>
 							</div>
 							<hr class="my-0" />
@@ -79,30 +79,37 @@
 
 
 
-								<div class="container">
+								<div class="container" >
+									<h5 class="form-switch  row justify-content-left">
+										<span> service demandés </span>
+										<input class="form-check-input" type="checkbox" (click)="hidden()" name="hidden1"  id="hidden1" value="ok" >
+
+										
+									</h5>
+									<div [hidden]="hideDem">
 									<div class="row justify-content-center">
 									  <div class="col-12 col-sm-6 col-lg-4">
 										<!-- Section Heading-->
-										<div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-										  <h3>Les Service Demandé </h3>
+										<div class="section_heading text-center  " >
+										  <h3>Les Service Demandés   </h3>
 										<br>
+													
 										  <div class="line"></div>
 										</div>
 									  </div>
+									  
 									</div>
 									<div class="row">
 									  <!-- Single Advisor-->
-									  <div class="col-12 col-sm-6 col-lg-4">
-										<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-										  <!-- Team Thumb-->
-										  <div class="advisor_thumb"><img src="assets/images/MonListServiceDemande/jsLogo.png" width="400px" height="300px" alt="">
-											<!-- Social Info-->
-										  </div>
+									  <div class="col-12 col-sm-6 col-lg-4" *ngFor="let l of listServiceDem; index as i">
+										<div class="single_advisor_profile  " >
+									
 										  <!-- Team Details-->
 										  <div class="single_advisor_details_info">
-											<h4>Java Script</h4>
-											<h5 >20 Tokens</h5>
-											<button class="btn btn-warning btn-circle" title="modifier" [routerLink]="['../edit-service/', 2]">   <i class="fa   fa-pencil"></i></button>
+											<h4>{{l.titre}}</h4>
+											<h6>{{l.description}}</h6>
+											<h5 >{{l.prix}} Tokens</h5>
+											<button class="btn btn-warning btn-circle" title="modifier" [routerLink]="['../edit-service-demande/', 2]">   <i class="fa   fa-pencil"></i></button>
 											<button class="btn btn-success btn-circle" title="consulter"><i class="fa fa-eye"></i></button>
 
 											<button title="supprimer" class="btn btn-danger" >
@@ -110,64 +117,44 @@
 										  </div>
 										</div>
 									  </div>
-									  <!-- Single Advisor-->
-									  <div class="col-12 col-sm-6 col-lg-4">
-										<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-										  <!-- Team Thumb-->
-										  <div class="advisor_thumb"><img src="assets/images/MonListServiceDemande/angular.png" width="400px" height="300px" alt="">
-											<!-- Social Info-->
-										  </div>
-										  <!-- Team Details-->
-										  <div class="single_advisor_details_info">
-											<h4>Angular</h4>
-											<h5 >10 Tokens</h5>
-											<button class="btn btn-warning btn-circle" title="modifier" [routerLink]="['../edit-service/', 3]">   <i class="fa fa-pencil"></i></button>
-											<button class="btn btn-success btn-circle" title="consulter"><i class="fa fa-eye"></i></button>
-
-											<button title="supprimer" class="btn btn-danger" >
-												<i class="fa fa-trash"></i></button>
-										  </div>
-										</div>
-									  </div>
-									  <!-- Single Advisor-->
-									  <div class="col-12 col-sm-6 col-lg-4">
-										<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-										  <!-- Team Thumb-->
-										  <div class="advisor_thumb"><img src="assets/images/MonListServiceDemande/flutter.png" width="400px" height="300px" alt="">
-										  </div>
-										  <!-- Team Details-->
-										  <div class="single_advisor_details_info">
-											<h4>Flutter</h4>
-											<h5 >9 Tokens</h5>
-											<button class="btn btn-warning btn-circle" title="modifier" [routerLink]="['../editArticle/', 4]">   <i class="fa fa-pencil"></i></button>
-											<button class="btn btn-success btn-circle" title="consulter" ><i class="fa fa-eye"></i></button>
-
-											<button title="supprimer" class="btn btn-danger" >
-												<i class="fa fa-trash"></i></button>
-
-										  </div>
-										  
-										</div>
-									  </div>
-									  <!-- Single Advisor-->
-									  <div class="col-12 col-sm-6 col-lg-4">
-										<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-										  <!-- Team Thumb-->
-										  <div class="advisor_thumb"><img src="assets/images/MonListServiceDemande/nodeJs.png" width="400px" height="300px" alt="">
-										  </div>
-										  <!-- Team Details-->
-										  <div class="single_advisor_details_info">
-											<h4>NodeJs</h4>
-											<h5 >10 Tokens</h5>			
-																			<button class="btn btn-warning btn-circle" title="modifier"  [routerLink]="['../editArticle/', 5]">   <i class="fa fa-pencil"></i></button>
-											<button class="btn btn-success btn-circle" title="consulter"><i class="fa fa-eye"></i></button>
-
-											<button title="supprimer" class="btn btn-danger" >
-												<i class="fa fa-trash"></i></button>
-										  </div>
-										</div>
-									  </div>
+									  
 									</div>
+									</div>
+									<div [hidden]="hideOff">
+									<div class="row justify-content-center" >
+										<div class="col-12 col-sm-6 col-lg-4">
+										  <!-- Section Heading-->
+										  <div class="section_heading text-center  " >
+											<h3>Les Service Offert </h3>
+										  <br>
+											<div class="line"></div>
+										  </div>
+										</div>
+									  </div>
+									<div class="row" >
+										<!-- Single Advisor-->
+										<div class="col-12 col-sm-6 col-lg-4" *ngFor="let l of listServiceOffert; index as i">
+										  <div class="single_advisor_profile  " >
+											<!-- Team Thumb-->
+											<div class="advisor_thumb"><img src="assets/images/MonListServiceDemande/jsLogo.png" width="400px" height="300px" alt="">
+											  <!-- Social Info-->
+											</div>
+											<!-- Team Details-->
+											<div class="single_advisor_details_info">
+											  <h4>{{l.titre}}</h4>
+											  <h6>{{l.description}}</h6>
+
+											  <h5 >{{l.prix}} Tokens</h5>
+											  <button class="btn btn-warning btn-circle" title="modifier" [routerLink]="['../edit-service-offert/', 2]">   <i class="fa   fa-pencil"></i></button>
+											  <button class="btn btn-success btn-circle" title="consulter"><i class="fa fa-eye"></i></button>
+  
+											  <button title="supprimer" class="btn btn-danger" (click)="deleteService('1232412')">
+												  <i class="fa fa-trash"></i></button>
+											</div>
+										  </div>
+										</div>
+									</div>
+									  </div>
 								  </div>
 
 								</div>

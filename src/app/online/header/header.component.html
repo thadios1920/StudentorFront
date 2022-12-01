@@ -1,24 +1,31 @@
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!">Studentors</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="servicesDem">Services Demandées</a></li>
-                <li class="nav-item">
-                    <a class="nav-link " id="navbarDropdown" routerLink="dashborad/profil" >compte</a>
-              
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto" style="text-decoration: none; color: #2399FF;"><div routerLink='home'>Studentors</div></h1>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <!-- <li><a class="nav-link" aria-current="page" routerLink=''>Accueil <span class="sr-only">(current)</span></a></li> -->
+                <li><a class="nav-link" routerLink='/servicesOff'>Trouver de l'aide</a></li>
+                <li><a class="nav-link" routerLink='servicesDem'>Donner de l'aide</a></li>                <li><a class="nav-link" routerLink='/pricing' id="tarifs">Tarifs</a></li>
+                <li><a class="nav-link" routerLink="dashborad/profil" >compte</a></li>
+
+                <li class="dropdown"><div class="nav-link" class="dropdown" routerLink='/about' id="about"><span>A porpos</span> <i class="bi bi-chevron-down"></i></div>
+                    <ul>
+                        <li><a class="nav-link" class="dropdown" routerLink='/about'>Notre Mission</a></li>
+                        <li><a class="nav-link" class="dropdown" routerLink='/about'>Guide Studentors</a></li>
+                        <li><a class="nav-link" class="dropdown" routerLink='/about'>Nous Contacter</a></li>
+                    </ul>
                 </li>
             </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Tokens
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </form>
-        </div>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+            <input class="form-control mr-sm-2" class="nav-link" type="text" id="search" name="search" placeholder="Search" />
+
+        </nav> 
+        <a class="btn-get-started" routerLink='/logIn' class="get-started-btn">Log In</a>
+        <a class="btn-get-started" routerLink='/signUp' class="get-started-btn">Sign Up</a>
     </div>
-</nav>
+</header>
+
+        
+ 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CrudService } from 'src/app/services/crud.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { environment } from 'src/environments/environment';
 
 const URL=environment.apiUrl;
@@ -14,7 +15,7 @@ const URL=environment.apiUrl;
 export class EditProfilComponent implements OnInit {
  
 
-  constructor(private crud: CrudService, private formBuilder: FormBuilder,private http :HttpClient) { }
+  constructor(private crud: CrudService, private formBuilder: FormBuilder,private http :HttpClient,private storage:TokenStorageService) { }
 
   // userModifier : FormGroup
 selectedFile : any 
@@ -33,6 +34,11 @@ selectedFile : any
     email:string ="" 
     password:string ="" 
     ville:string ="" 
+
+
+    imageUrl :string = this.storage.getUser().image 
+    name : string = this.storage.getUser().nom
+    lastname : string = this.storage.getUser().prenom
 
     getName(nom: string | any) {
       this.nom = nom;
@@ -64,6 +70,7 @@ selectedFile : any
     }
 
 
+
 //Apres la soumission du formulaire
   OnEditProfile() {
     let formData = new FormData();
@@ -77,11 +84,14 @@ selectedFile : any
 
     console.log(formData);
 
-    this.http.put(URL+'/utilisateur/637921ddabeaf0ae2b177b11',formData)
+    this.http.put(URL+'/utilisateur/'+this.storage.getUser().id,formData)
     .subscribe(data => console.log(data))
     // this.crud.EditProfile(this.userModifier.value)
     //   .subscribe(data => console.log(data));
   }
+
+
+
   ngOnInit(): void {
     
   }

@@ -1,43 +1,41 @@
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <!-- <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div> -->
-            </div>
-        </header>
-        <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5" *ngFor="let l of listService; index as i" >
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    
-                   
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder"> {{l.titre}} </h5>
-                                    <!-- Product reviews-->
-                    
-                                    <!-- Product price-->
-                                    TokenMax : 10
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Voire details</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-       
+<main id="main">
         
- 
+    <!-- ======= Courses Section ======= -->
+    <section id="courses" class="courses">
+      <div class="container">
+
+        <div class="container px-4 px-lg-5 mt-5">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="course-item" *ngFor="let l of listService; index as i">
+              <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Voir details</h4>
+                  <p class="price"> {{l.prix}}</p> connects
+                </div>
+
+                <h3><a href="course-details.html">{{l.titre}}</a></h3>
+                <p>Description bla bla</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="../../../assets/images/trainer-1.jpg" class="img-fluid" alt="">
+                    <span>Antonio</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;50
+                    &nbsp;&nbsp;
+                    <i class="bx bx-heart"></i>&nbsp;65
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+        </div>
+      </div>
+    </section><!-- End Courses Section -->
+  </main><!-- End #main -->
+
+
+
 

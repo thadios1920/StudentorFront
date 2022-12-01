@@ -12,10 +12,10 @@
 					<div class="widget user">
 						<!-- User Image -->
 						<div class="image d-flex justify-content-center">
-							<img  alt="" class="">
+							<img  alt="" [src]="imageUrl" class="">
 						</div>
 						<!-- User Name -->
-						<h5 class="text-center">ALI NEJI</h5>
+						<h5 class="text-center"> {{name}} {{lastname}} </h5>
 					</div>
 				
 			
@@ -95,7 +95,7 @@
 									<label for="first-name">Adresse Email</label>
 									<input type="text" class="form-control" id="email" (change)="getEmail(email.value)" #email required>
 								</div>
-								<!-- Last Name -->
+								<!-- paassword -->
 								<div class="form-group">
 									<label for="last-name">Changer Mot de passe</label>
 									<input type="password" class="form-control"id="password" (change)="getPassword(password.value)" #password required>
