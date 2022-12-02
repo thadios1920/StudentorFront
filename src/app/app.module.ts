@@ -25,6 +25,7 @@ import { PricingComponent } from './online/pricing/pricing.component';
 import { AboutComponent } from './online/about/about.component';
 import { TokenInterceptor, TokenInterceptorProvider } from './_helpers/token.interceptor';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
+import { ConsultUserComponent } from './consult-user/consult-user.component';
 
 
 
@@ -48,7 +49,8 @@ import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin
     SignUpComponent,
     PricingComponent,
     AboutComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    ConsultUserComponent
     
   ],
   imports: [

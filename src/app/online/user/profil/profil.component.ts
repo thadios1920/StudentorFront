@@ -26,6 +26,8 @@ export class ProfilComponent implements OnInit,OnDestroy {
   imageURL: string =  this.tokenStorage.getUser().image
 name : string = this.tokenStorage.getUser().nom
     lastname : string = this.tokenStorage.getUser().prenom
+    email : string = this.tokenStorage.getUser().email
+
 
   deleteServiceOffert(id:string)
 {

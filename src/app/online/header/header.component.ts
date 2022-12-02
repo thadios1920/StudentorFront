@@ -26,6 +26,7 @@ onLogOut(){
   this.router.navigate(["/logIn"]) 
 }
 
+
   ngOnInit(): void {
     if (this.tokenStorage.getUser().isAdmin) {
       this.adminHeader = true
@@ -36,7 +37,7 @@ onLogOut(){
   }
    console.log(window.sessionStorage.length);
    console.log(this.isLoged);
-   console.log("status"+this.tokenStorage.getUser().isAdmin);
+   console.log("status"+this.tokenStorage.getUser().isAdmin);  
   }
 
 }

@@ -23,26 +23,23 @@
 								<h5 class="card-title mb-0">Profile Details</h5>
 							</div>
 							<div class="card-body text-center">
-								<img [src]="imageURL" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" ngheight="128" />
-								<h5 class="card-title mb-0"> {{name}} </h5>
-								<div class="text-muted mb-2"> {{lastname}} </div>
+								<img [src]="getUser.image" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" ngheight="128" />
+								<h5 class="card-title mb-0"> {{getUser.nom}} </h5>
+								<div class="text-muted mb-2"> {{getUser.prenom}} </div>
+                                
 
-								<div>
-									
-									<a class="btn btn-primary btn-sm" (click)="onEdit()"><span data-feather="message-square"></span> Modifier Profile</a>
-								</div>
-							</div>
 							
+							</div>
+							<hr class="my-0" />
+					
 							<hr class="my-0" />
 							<div class="card-body">
 								<h5 class="h6 card-title">About</h5>
 								<ul class="list-unstyled mb-0">
-									<li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Email: <span style="color:blue">{{email}}</span></li>
-
-									
+									<li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Email :<span style="color:blue">{{getUser.email}}</span></li>
 								</ul>
 							</div>
-						
+					
 						</div>
 					</div>
 
@@ -86,11 +83,7 @@
 											<h4>{{l.titre}}</h4>
 											<h6>{{l.description}}</h6>
 											<h5 >{{l.prix}} Tokens</h5>
-											<button class="btn btn-warning btn-circle" title="modifier" [routerLink]="['../edit-service-demande/',l.id]">   <i class="fa   fa-pencil"></i></button>
-											<button class="btn btn-success btn-circle" title="consulter"><i class="fa fa-eye"></i></button>
-
-											<button title="supprimer" class="btn btn-danger" (click)="deleteServiceDemande(l.id)" >
-												<i class="fa fa-trash"></i></button>
+											
 										  </div>
 										</div>
 									  </div>
@@ -122,11 +115,7 @@
 											  <h6>{{l.description}}</h6>
 
 											  <h5 >{{l.prix}} Tokens</h5>
-											  <button class="btn btn-warning btn-circle" title="modifier" [routerLink]="['../edit-service-offert/', l.id]">   <i class="fa   fa-pencil"></i></button>
-											  <button class="btn btn-success btn-circle" title="consulter"><i class="fa fa-eye"></i></button>
-  
-											  <button title="supprimer" class="btn btn-danger" (click)="deleteServiceOffert(l.id)">
-												  <i class="fa fa-trash"></i></button>
+											 
 											</div>
 										  </div>
 										</div>

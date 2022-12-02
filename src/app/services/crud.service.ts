@@ -74,7 +74,10 @@ deleteUserfromRoot(id:string | undefined ):Observable<User>{
   return this.http.put<User>(URL+'/utilisateur/'+this.tokenStorage.getUser().id, user,requestOptions);
   }    
   
-  
+  //Get user byid 
+  public getUserId(id:string):Observable < User > {
+    return this.http.get<User>(URL+'/utilisateur/'+id,requestOptions)
+  }
 
 //Authentification
 login(credentials: Credential): Observable<any>{

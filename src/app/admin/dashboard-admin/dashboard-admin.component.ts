@@ -1,5 +1,6 @@
 import { tokenName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { CrudService } from 'src/app/services/crud.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
@@ -13,7 +14,8 @@ export class DashboardAdminComponent implements OnInit {
 
   constructor(
     private token:TokenStorageService,
-    private crud:CrudService
+    private crud:CrudService,
+    private router:Router
   ) { }
 
   userStorage = this.token.getUser() 
@@ -26,6 +28,8 @@ export class DashboardAdminComponent implements OnInit {
 
     window.location.reload();
   }
+
+ 
 
 
   ngOnInit(): void {

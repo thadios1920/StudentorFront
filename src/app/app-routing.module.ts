@@ -16,6 +16,7 @@ import { PricingComponent } from './online/pricing/pricing.component';
 import { EditProfilComponent } from './online/user/edit-profil/edit-profil.component';
 import { EditServiceDemComponent } from './online/user/edit-service-dem/edit-service-dem.component';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
+import { ConsultUserComponent } from './consult-user/consult-user.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'servicesOff',component:ServiceOffertComponent},
   {path:'postservicesOff',component:PostServiceOffComponent},
   {path:'postservicesDem',component:PostServiceDemComponent},
+  {path:'consulteUser/:id',component:ConsultUserComponent},
   {path:'dashborad/edit-service-offert/:id',component:EditServiceOffComponent},
   {path:'dashborad/edit-service-demande/:id',component:EditServiceDemComponent},
   {path:'about',component:AboutComponent},

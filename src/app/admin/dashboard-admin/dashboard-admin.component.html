@@ -37,8 +37,8 @@
                         <td>{{u.email}}</td>
                         <td> {{u.profession}} </td>
                         <td> {{u.ville}} </td>
-                        <td> <button (click)="onDelete(u.id)" class="btn btn-danger" >Supprimer</button>
-                            <button (click)="onDelete(u.id)" class="btn btn-primery" >Consulter</button> </td>
+                        <td> <button (click)="onDelete(u.id)" class="btn btn-danger" style="color:red">Supprimer</button>
+                            <button [routerLink]="['/consulteUser',u.id]" class="btn btn-primary" style="color:blue" >Consulter</button> </td>
                     </tr>
                     </table>
                     </div>
