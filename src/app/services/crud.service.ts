@@ -60,7 +60,12 @@ deleteUserfromRoot(id:string | undefined ):Observable<User>{
     addServiceOffert(service:Servicesoff):Observable<Servicesoff>{
       return this.http.post<Servicesoff>(URL+'/serviceOff/addServiceOff', service,requestOptions);
       }
-
+      public getServiceDemandeByIdt(id:string | any ):Observable<Servicesdem> {
+        return this.http.get<Servicesdem>(URL+'/serviceDem/'+id,requestOptions);
+      }
+      public getServiceOfferByIdt(id:string | any ):Observable<Servicesoff> {
+        return this.http.get<Servicesoff>(URL+'/serviceOff/'+id,requestOptions);
+      }
 //supprimer Service
     deleteServiceOffert(id:string):Observable<Servicesoff>{
       return this.http.delete<Servicesoff>(URL+'/serviceOff/'+id,requestOptions);
@@ -73,6 +78,11 @@ deleteUserfromRoot(id:string | undefined ):Observable<User>{
  EditProfile(user:User):Observable<User>{
   return this.http.put<User>(URL+'/utilisateur/'+this.tokenStorage.getUser().id, user,requestOptions);
   }    
+
+  //Get User
+public getUser(id:String):Observable <User> {
+  return this.http.get<User>(URL+'/utilisateur/'+id,requestOptions)
+}
   
   //Get user byid 
   public getUserId(id:string):Observable < User > {

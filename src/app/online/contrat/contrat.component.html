@@ -1,0 +1,53 @@
+<!-- Envoie d’un formulaire par l’étudiant faisant une offre, ce dernier contient les informations sur le service voulu: 
+            (Description, Prix, Date, Durée, Date d’expiration)qui quand accepté par le mentor (Etat=”Accepted”), le prix en tokens va être 
+            soustrait du nombre de tokens de l'étudiant et restera bloqué dans une variable jusqu'à ce que le cours soit réalisé 
+            pour qu’enfin il s'ajoute au nombre de tokens du mentor) -->
+
+            <form>
+                <div class="card">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="inputTitre">Titre</label>
+                            <input type="text" class="form-control" id="inputTitre" placeholder="Mathématiques">
+                        </div>
+                        <br>
+            
+                        <div class="form-group$">
+                            <label for="inputDescription">Description</label>
+                            <input type="text" class="form-control" id="inputDescription"
+                                placeholder="J'arrive pas à comprendre le théorème de Pythagore">
+                        </div>
+                    </div>
+                    <br>
+            
+                    <div class="form-group">
+                        <label for="inputPrix">Prix en tokens</label>
+                        <input type="number" class="form-control" id="inputPrix" placeholder="5">
+                    </div>
+                    <br>
+            
+                    <div class="form-group">
+                        <label for="inputDateHeure">Date et heure</label>
+                        <input type="datetime-local" class="form-control" id="inputDateHeure">
+                    </div>
+                    <br>
+            
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="col-md-10" for="inputDateexp">Date d'expiration du service demandé</label>
+                            <input type="datetime-local" class="form-control" id="inputDateexp">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="custom-file">
+                            <input type="file" name="" id="" placeholder="" class="custom-file-input" aria-describedby="fileHelpId">
+                            <span class="custom-file-control"></span>
+                        </label>
+                        <small id="fileHelpId" class="form-text text-muted">Ajouter fichier</small>
+                    </div>
+                    <br>
+            
+                    <button type="submit" class="btn btn-primary">Valider Contrat</button>
+                </div>
+            </form>

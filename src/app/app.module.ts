@@ -26,6 +26,9 @@ import { AboutComponent } from './online/about/about.component';
 import { TokenInterceptor, TokenInterceptorProvider } from './_helpers/token.interceptor';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
 import { ConsultUserComponent } from './consult-user/consult-user.component';
+import { DetailsServiceComponent } from './online/details-service/details-service.component';
+import { DetailsServiceDemComponent } from './online/details-service-dem/details-service-dem.component';
+import { ContratComponent } from './online/contrat/contrat.component';
 
 
 
@@ -50,7 +53,10 @@ import { ConsultUserComponent } from './consult-user/consult-user.component';
     PricingComponent,
     AboutComponent,
     DashboardAdminComponent,
-    ConsultUserComponent
+    ConsultUserComponent,
+    DetailsServiceComponent,
+    DetailsServiceDemComponent,
+    ContratComponent
     
   ],
   imports: [

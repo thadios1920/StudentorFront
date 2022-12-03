@@ -17,6 +17,9 @@ import { EditProfilComponent } from './online/user/edit-profil/edit-profil.compo
 import { EditServiceDemComponent } from './online/user/edit-service-dem/edit-service-dem.component';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
 import { ConsultUserComponent } from './consult-user/consult-user.component';
+import { DetailsServiceComponent } from './online/details-service/details-service.component';
+import { DetailsServiceDemComponent } from './online/details-service-dem/details-service-dem.component';
+import { ContratComponent } from './online/contrat/contrat.component';
 
 
 const routes: Routes = [
@@ -33,7 +36,11 @@ const routes: Routes = [
   {path:'signUp',component:SignUpComponent},
   {path:'logIn',component:LogInComponent},
   {path:'pricing',component:PricingComponent},
+  {path:'detailsServiceOff/:id',component:DetailsServiceComponent},
+  {path:'detailsServiceDem/:id',component:DetailsServiceDemComponent},
   {path:'dashborad/profil',component:ProfilComponent},
+  {path:'contrat',component:ContratComponent},
+
   {path:'dashborad/edit-profil/:id',component:EditProfilComponent},
   {path:'dashborad/admin',component:DashboardAdminComponent},
 

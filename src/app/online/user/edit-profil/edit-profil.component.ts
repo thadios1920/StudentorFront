@@ -5,7 +5,7 @@ import { CrudService } from 'src/app/services/crud.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { environment } from 'src/environments/environment';
 
-const URL=environment.apiUrl;
+const URL=environment.apiUrl; 
 
 @Component({
   selector: 'app-edit-profil',

@@ -6,6 +6,7 @@ export class Servicesoff {
      domaine?: string | any
      commentaires?: string | any
      tempsService?: string | any
+     image?: string | any
     constructor(
          description?: string | any ,
          titre?: string | any,

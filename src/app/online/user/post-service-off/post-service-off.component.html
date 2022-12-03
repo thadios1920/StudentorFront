@@ -1,16 +1,16 @@
 
 <section class="ad-post bg-gray py-5">
     <div class="container">
-        <form  [formGroup]="serviceoffForm" (submit)="onAjouter()"  >
+        <form (submit)="onAjouter()"  >
             <!-- Post Your ad start -->
             <fieldset class="border border-gary p-4 mb-5">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3>Poster un service offert</h3>
+                            <h3>Poster un service offert</h3> 
                         </div>
-                        <div class="col-lg-6">
-                            <h6 class="font-weight-bold pt-4 pb-1">nom du service</h6>
-                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" formControlName="titre" placeholder="Ajouter nom du service" 
+                        <div class="col-lg-6"> 
+                            <h6 class="font-weight-bold pt-4 pb-1">Donner un nom pour service</h6>
+                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" id="titre" (change)="getTitre(titre.value)" #titre placeholder="Ajouter nom du service" 
                              >
                   
                             <div class="choose-file text-center my-4 py-4 rounded">
@@ -18,8 +18,14 @@
                                     <span class="d-block font-weight-bold text-dark"> Déposez des images n'importe où pour votre service</span>
                                     <span class="d-block">or</span>
                                     <span class="d-block btn bg-primary text-white my-3 select-files">Select image</span>
-                                    <span class="d-block">le nombres maximum des images est: 4</span>
-                                    <input type="file"  accept="image/*" class="form-control-file d-none"  id="file-upload" name="file"   > 
+                                    <input type="file" id="formFile" class="form-control" 
+                                    type="file"
+                                    class="p-inputtext"
+                                    accept="image/*"
+                                    (change)="onFileChanged($event)"
+ />  
+                                    <span class="d-block">le nombres maximum des images est: 1</span>
+                                    
                                 </label>
                                 <div>
                                <!--  <img *ngFor="let image of imagesShow" [src]="image" height="100" width="100" style="margin-left: 6px;border:1px solid black;">
@@ -32,7 +38,7 @@
                        
                         <div class="col-lg-6">
                             <h6 class="font-weight-bold pt-4 pb-1">Domaine</h6>
-                            <input  id="inputGroupSelect" formControlName="domaine" type="text" class="w-100">
+                            <input  id="titre" (change)="getDomaine(domaine.value)" #domaine type="text" class="w-100">
                                   <!--  <option *ngFor="let t of dataArray" [value]=t.name >{{t.name}}</option>   -->
                                
                             
@@ -40,8 +46,8 @@
                                 <h6 class="font-weight-bold pt-4 pb-1">Prix ​​du piece (DTT):</h6>
                                 <div class="row px-3">
                                     <div class="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
-                                        <input type="number" formControlName="prix" class="border-0 py-2 w-100 price" placeholder="prix"
-                                            id="price">
+                                        <input type="number" id="prix" (change)="getPrix(prix.value)" #prix class="border-0 py-2 w-100 price" placeholder="prix"
+                                            >
                                     </div>
                                
                                 </div>
@@ -49,9 +55,9 @@
 
                     
                               <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
-                              <textarea description="title" formControlName="description" class="border p-3 w-100"  rows="7" placeholder="Écrivez les détails de votre service"></textarea>
+                              <textarea description="title" class="border p-3 w-100"  rows="7" placeholder="Écrivez les détails de votre service"></textarea>
                            
-                              <button class="btn btn-primary">Poster</button>
+                              <button class="btn btn-primary" (click)="onAjouter()" >Poster</button>
 
                          
                         </div>

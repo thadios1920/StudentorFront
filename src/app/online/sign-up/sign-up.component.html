@@ -31,7 +31,7 @@
                 <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
                 <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">*Mot de passe requis</span>
               </div>
-              <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary col-lg-12 mb-2">Créer un compte</button>
+              <button type="submit" class="btn btn-primary col-lg-12 mb-2">Créer un compte</button>
             </form>
             <a style="color: rgb(0, 0, 0); margin-top: 10px;" routerLink="/logIn">Se connecter</a>
         </div>

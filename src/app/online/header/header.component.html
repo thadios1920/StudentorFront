@@ -7,6 +7,7 @@
             <ul>
                 <!-- <li><a class="nav-link" aria-current="page" routerLink=''>Accueil <span class="sr-only">(current)</span></a></li> -->
                 <li><a class="nav-link" routerLink='/servicesOff' [hidden]="adminHeader" >Trouver de l'aide</a></li>
+                <li><a routerLink='/messagerie' [hidden]="!isLoged" class="nav-link">Messagerie</a></li>
                 <li><a class="nav-link" routerLink='servicesDem' [hidden]="adminHeader" >Donner de l'aide</a></li>                <li><a class="nav-link" routerLink='/pricing' [hidden]="adminHeader" id="tarifs">Tarifs</a></li>
                 <li>
                     <li class="dropdown"> <a class="nav-link" [hidden]="!isLoged || adminHeader" routerLink="dashborad/profil" >compte <i class="bi bi-chevron-down"></i></a>
@@ -33,6 +34,7 @@
         <a routerLink='/logIn' [hidden]="isLoged" class="get-started-btn">Se connecter</a>
         <a routerLink='/signUp' [hidden]="isLoged" class="get-started-btn">Créer un compte</a>
         <a (click)="onLogOut()" [hidden]="!isLoged" class="get-started-btn">Deconnexion</a>
+        
     </div>
 </header>
 
